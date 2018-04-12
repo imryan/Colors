@@ -73,8 +73,8 @@
 		8576E7F17ED968852A3E0FE869156BFF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5D8173434FE00016739EAFDEFEA9313 /* Foundation.framework */; };
 		87843459259254247ADF7397FA4AC03B /* Pods-Colors_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F1FE9EA57345706E90C5671C4FCE3F5 /* Pods-Colors_Tests-dummy.m */; };
 		8B55BD430033027AD5FF22D630DD9F62 /* DSL.m in Sources */ = {isa = PBXBuildFile; fileRef = 82267A98670DE3E96EAB2047A8872FE0 /* DSL.m */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
+		94A8A5F6207FE959002D57B4 /* Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A8A5F5207FE959002D57B4 /* Palette.swift */; };
 		94C06986207EEE66006C9B5C /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94C06985207EEE66006C9B5C /* Colors.swift */; };
-		94C06989207EEE80006C9B5C /* Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94C06988207EEE80006C9B5C /* Palette.swift */; };
 		96132E7432F8DD315A88A07C6B4F9C72 /* NMBStringify.h in Headers */ = {isa = PBXBuildFile; fileRef = E15D0BD895E38B9512195BFED925B0F7 /* NMBStringify.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		986D2D8BD112CC7711335F0F6B2D802F /* Pods-Colors_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = BF2A4232E5C23EA7C08E8181604F810B /* Pods-Colors_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		988EED125395950177DC14AF9BC87D8D /* HaveCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698366519E8DF1484C0AE2845EB47D7F /* HaveCount.swift */; settings = {COMPILER_FLAGS = "-DPRODUCT_NAME=Nimble/Nimble"; }; };
@@ -245,8 +245,8 @@
 		9245B48A46AAC45502A6B8A2AB745038 /* HooksPhase.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HooksPhase.swift; path = Sources/Quick/Hooks/HooksPhase.swift; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		93FA72F53F1D3E929D7371880F333AA4 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		94A8A5F5207FE959002D57B4 /* Palette.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Palette.swift; sourceTree = "<group>"; };
 		94C06985207EEE66006C9B5C /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Colors.swift; path = Colors/Classes/Colors.swift; sourceTree = "<group>"; };
-		94C06988207EEE80006C9B5C /* Palette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Palette.swift; sourceTree = "<group>"; };
 		9609E22E336BE42CEF7E453162DF49A8 /* Pods-Colors_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Colors_Tests-umbrella.h"; sourceTree = "<group>"; };
 		97CBC16B762E1F8BB8FACC8DFE37A803 /* Pods-Colors_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Colors_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		9C1965DFDB98F4612965B29CA2787EFB /* Nimble-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Nimble-prefix.pch"; sourceTree = "<group>"; };
@@ -489,7 +489,7 @@
 			isa = PBXGroup;
 			children = (
 				94C06985207EEE66006C9B5C /* Colors.swift */,
-				94C06987207EEE6C006C9B5C /* Model */,
+				94A8A5F4207FE959002D57B4 /* Model */,
 				44F46ED8E6AA38571A26E8DB4026AE58 /* Pod */,
 				F9C3694C92A0F941AB9D89E637CD951D /* Support Files */,
 			);
@@ -532,12 +532,13 @@
 			path = "../Target Support Files/Nimble";
 			sourceTree = "<group>";
 		};
-		94C06987207EEE6C006C9B5C /* Model */ = {
+		94A8A5F4207FE959002D57B4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				94C06988207EEE80006C9B5C /* Palette.swift */,
+				94A8A5F5207FE959002D57B4 /* Palette.swift */,
 			);
-			path = Model;
+			name = Model;
+			path = Colors/Classes/Model;
 			sourceTree = "<group>";
 		};
 		A066C6EF561B336DD2220BF5ACE721E3 /* Support Files */ = {
@@ -943,7 +944,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				94C06989207EEE80006C9B5C /* Palette.swift in Sources */,
+				94A8A5F6207FE959002D57B4 /* Palette.swift in Sources */,
 				DBCB15BF6621C280B98E1BA051EB5275 /* Colors-dummy.m in Sources */,
 				94C06986207EEE66006C9B5C /* Colors.swift in Sources */,
 			);

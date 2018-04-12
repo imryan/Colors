@@ -36,7 +36,7 @@ open class Colors {
             }
             completion(nil)
             
-            }.resume()
+        }.resume()
     }
     
     /// Fetch single `Palette` object by its identifier
