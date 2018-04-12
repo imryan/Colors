@@ -20,6 +20,28 @@ it, simply add the following line to your Podfile:
 pod 'Colors'
 ```
 
+## Usage
+
+Fetch all color palettes
+```swift
+// Fetch all color palettes
+Colors.fetchPalettes { (palettes) in
+    if let palettes = palettes {
+        // Retrieved palettes
+    }
+}
+```
+
+Fetch single color palette by its identifier
+```swift
+// Fetch one color palette
+Colors.fetchPalette(withId: "57cad90de956653b3248cfdb") { (palette) in
+    if let palette = palette {
+        // Retrieved palette
+    }
+}
+```
+
 ## Author
 
 Ryan Cohen, notryancohen@gmail.com
