@@ -1,0 +1,6 @@
+framework module Pods_Colors_Example {
+  umbrella header "Pods-Colors_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

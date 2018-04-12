@@ -20,11 +20,71 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z6O-d6-Zst">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="133.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="133.5" id="B0x-tJ-LlN"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="81v-W5-jgl">
+                                <rect key="frame" x="0.0" y="134" width="375" height="133.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="133.5" id="kUS-Qq-hnv"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ObM-kK-0Xs">
+                                <rect key="frame" x="0.0" y="536" width="375" height="131"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hRw-6E-WuL">
+                                <rect key="frame" x="0.0" y="402" width="375" height="133.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="133.5" id="VhB-e6-JaN"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fyE-Eb-iCa">
+                                <rect key="frame" x="0.0" y="268" width="375" height="133.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="133.5" id="Oho-BR-ULH"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="fyE-Eb-iCa" secondAttribute="trailing" id="4c4-NX-2pE"/>
+                            <constraint firstItem="hRw-6E-WuL" firstAttribute="top" secondItem="fyE-Eb-iCa" secondAttribute="bottom" id="9zg-vx-dHM"/>
+                            <constraint firstAttribute="trailing" secondItem="hRw-6E-WuL" secondAttribute="trailing" id="AWn-09-xuY"/>
+                            <constraint firstItem="fyE-Eb-iCa" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="CqS-gK-bUo"/>
+                            <constraint firstItem="ObM-kK-0Xs" firstAttribute="top" secondItem="hRw-6E-WuL" secondAttribute="bottom" id="DL4-br-uag"/>
+                            <constraint firstItem="81v-W5-jgl" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="KyX-5W-OQN"/>
+                            <constraint firstAttribute="trailing" secondItem="z6O-d6-Zst" secondAttribute="trailing" id="MmD-H4-ST1"/>
+                            <constraint firstItem="z6O-d6-Zst" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="QGD-BF-h9r"/>
+                            <constraint firstAttribute="trailing" secondItem="81v-W5-jgl" secondAttribute="trailing" id="RBn-r9-KJi"/>
+                            <constraint firstAttribute="trailing" secondItem="ObM-kK-0Xs" secondAttribute="trailing" id="XER-Ny-O1y"/>
+                            <constraint firstItem="hRw-6E-WuL" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="Yib-gF-Mvf"/>
+                            <constraint firstItem="ObM-kK-0Xs" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="bKc-od-S5v"/>
+                            <constraint firstItem="z6O-d6-Zst" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="dnk-Q5-XnJ"/>
+                            <constraint firstItem="fyE-Eb-iCa" firstAttribute="top" secondItem="81v-W5-jgl" secondAttribute="bottom" id="gCS-UD-n2e"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="ObM-kK-0Xs" secondAttribute="bottom" id="hg6-zu-gWF"/>
+                            <constraint firstItem="81v-W5-jgl" firstAttribute="top" secondItem="z6O-d6-Zst" secondAttribute="bottom" id="lh4-mc-shh"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outletCollection property="colorViews" destination="z6O-d6-Zst" collectionClass="NSMutableArray" id="NRP-Lc-1am"/>
+                        <outletCollection property="colorViews" destination="81v-W5-jgl" collectionClass="NSMutableArray" id="0dH-o6-sPf"/>
+                        <outletCollection property="colorViews" destination="fyE-Eb-iCa" collectionClass="NSMutableArray" id="TBo-V3-foK"/>
+                        <outletCollection property="colorViews" destination="hRw-6E-WuL" collectionClass="NSMutableArray" id="oXP-vs-ycX"/>
+                        <outletCollection property="colorViews" destination="ObM-kK-0Xs" collectionClass="NSMutableArray" id="9Yu-MG-B9C"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-79.200000000000003" y="133.5832083958021"/>
         </scene>
     </scenes>
 </document>

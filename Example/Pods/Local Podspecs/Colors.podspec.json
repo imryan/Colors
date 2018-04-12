@@ -1,0 +1,22 @@
+{
+  "name": "Colors",
+  "version": "0.1.0",
+  "summary": "A short description of Colors.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/imryan/Colors",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "imryan": "notryancohen@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/imryan/Colors.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "Colors/Classes/**/*"
+}
