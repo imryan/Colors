@@ -15,21 +15,48 @@ class ViewController: UIViewController {
     
     @IBOutlet var colorViews: [UIView]!
     
+    // MARK: - Attributes
+    
+    private var palettes: [Palette] = []
+    private var isAnimating = false
+    
     // MARK: - Functions
     
-    private func fetchAndAnimateAllPalettes() {
+    @objc private func fetchAndAnimateAllPalettes() {
+        isAnimating = true
+        
         // Fetch all color palettes
         Colors.fetchPalettes { (palettes) in
             if let palettes = palettes {
+                self.palettes = palettes
+                
                 palettes.forEach({ (palette) in
-                    Thread.sleep(forTimeInterval: 0.2)
-                    self.animateColors(withPalette: palette)
+                    if self.isAnimating {
+                        Thread.sleep(forTimeInterval: 0.2)
+                        self.animateColors(withPalette: palette)
+                    }
                 })
             }
         }
     }
     
-    private func fetchAndAnimateSinglePalette() {
+    @objc private func fetchAndAnimateRandomPalette() {
+        isAnimating = false
+        
+        if palettes.count > 0 {
+            let index = Int(arc4random_uniform(UInt32(palettes.count)))
+            let randomPalette = palettes[index]
+            
+            animateColors(withPalette: randomPalette)
+            return
+        } else {
+            Colors.fetchPalettes { (palettes) in
+                if let palettes = palettes {
+                    self.palettes = palettes
+                }
+            }
+        }
+        
         // Fetch one color palette
         Colors.fetchPalette(withId: "57cad90de956653b3248cfdb") { (palette) in
             if let palette = palette {
@@ -40,31 +67,33 @@ class ViewController: UIViewController {
     
     // MARK: - UI
     
+    private func setupUI() {
+        self.title = "Colors"
+        
+        let allBarItem = UIBarButtonItem(title: "All", style: .plain, target: self, action: #selector(fetchAndAnimateAllPalettes))
+        let randomBarItem = UIBarButtonItem(title: "Random", style: .plain, target: self, action: #selector(fetchAndAnimateRandomPalette))
+        
+        self.navigationItem.leftBarButtonItem = allBarItem
+        self.navigationItem.rightBarButtonItem = randomBarItem
+    }
+    
     private func animateColors(withPalette palette: Palette) {
         DispatchQueue.main.async {
             UIView.animate(withDuration: 0.3, animations: {
-                self.colorViews[0].backgroundColor = palette.colorValues[0]
-                self.colorViews[1].backgroundColor = palette.colorValues[1]
-                self.colorViews[2].backgroundColor = palette.colorValues[2]
-                self.colorViews[3].backgroundColor = palette.colorValues[3]
-                self.colorViews[4].backgroundColor = palette.colorValues[4]
+                for (index, color) in palette.colorValues.enumerated() {
+                    self.colorViews[index].backgroundColor = color
+                }
             })
         }
     }
     
-    // MARK: - Touches
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        fetchAndAnimateSinglePalette()
-    }
-    
     // MARK: - Lifecycle
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        //fetchAndAnimateAllPalettes()
+        setupUI()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
