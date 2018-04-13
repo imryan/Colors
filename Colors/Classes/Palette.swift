@@ -17,7 +17,7 @@ public struct Palette: Codable {
     /// Array of 5 hex color code strings (e.g. ['#cc4444', '#f9f2f2', ...])
     public let colors: [String]?
     
-    /// `UIColor` values for color codes
+    /// `UIColor` values for hex color codes
     public var colorValues: [UIColor] {
         var mutableColorCodes: [UIColor] = []
         
