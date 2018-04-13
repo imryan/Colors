@@ -15,5 +15,4 @@ Simple color palletes courtesy of klart.io
   s.swift_version = '4.0'
   s.ios.deployment_target = '8.0'
   s.source_files = 'Colors/Classes/**/*'
-  s.dependency 'Alamofire'
 end
