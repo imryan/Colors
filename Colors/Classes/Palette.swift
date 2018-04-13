@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct Palette: Codable {
+public class Palette: Codable {
     
     // MARK: - Attributes
     
@@ -44,7 +44,7 @@ public struct Palette: Codable {
     
     // MARK: - Helpers
     
-    private func UIColorFromRGB(rgb: UInt) -> UIColor {
+    public func UIColorFromRGB(rgb: UInt) -> UIColor {
         return UIColor(
             red: CGFloat((rgb & 0xFF0000) >> 16) / 255.0,
             green: CGFloat((rgb & 0x00FF00) >> 8) / 255.0,

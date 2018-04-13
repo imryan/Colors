@@ -12,7 +12,7 @@ public class Colors {
     // MARK: - Attributes
     
     /// API base URL
-    private static let API_URL = "https://klart.io/api/colors"
+    static let API_URL = "https://klart.io/api/colors"
     
     // MARK: - Functions
     
