@@ -56,13 +56,6 @@ class ViewController: UIViewController {
                 }
             }
         }
-        
-        // Fetch one color palette
-        Colors.fetchPalette(withId: "57cad90de956653b3248cfdb") { (palette) in
-            if let palette = palette {
-                self.animateColors(withPalette: palette)
-            }
-        }
     }
     
     // MARK: - UI
