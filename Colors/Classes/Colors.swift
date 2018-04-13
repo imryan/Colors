@@ -7,7 +7,7 @@
 
 import Foundation
 
-open class Colors {
+public class Colors {
     
     // MARK: - Attributes
     
@@ -19,7 +19,7 @@ open class Colors {
     /// Fetch all color palettes as an array of `Palette` objects
     ///
     /// - Parameter completion: Optional array of `Palette` objects containing an identifier and hex color code array.
-    open static func fetchPalettes(completion: @escaping (_ palettes: [Palette]?) -> ()) {
+    public static func fetchPalettes(completion: @escaping (_ palettes: [Palette]?) -> ()) {
         URLSession.shared.dataTask(with: URL(string: API_URL)!) { (data, response, error) in
             guard let data = data, error == nil else { return }
             
@@ -36,7 +36,7 @@ open class Colors {
             }
             completion(nil)
             
-        }.resume()
+            }.resume()
     }
     
     /// Fetch single `Palette` object by its identifier
@@ -44,7 +44,7 @@ open class Colors {
     /// - Parameters:
     ///   - id: `Palette` object identifier.
     ///   - completion: Optional `Palette` object.
-    open static func fetchPalette(withId id: String, completion: @escaping (_ palette: Palette?) -> ()) {
+    public static func fetchPalette(withId id: String, completion: @escaping (_ palette: Palette?) -> ()) {
         fetchPalettes { (palettes) in
             if let palettes = palettes {
                 if let match = palettes.first(where: { $0.id == id }) {
