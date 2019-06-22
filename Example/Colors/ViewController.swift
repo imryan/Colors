@@ -18,7 +18,7 @@ class ViewController: UIViewController {
     // MARK: - Attributes
     
     private var palettes: [Palette] = []
-    private var isAnimating = false
+    private var isAnimating: Bool = false
     
     // MARK: - Functions
     
@@ -43,12 +43,11 @@ class ViewController: UIViewController {
     @objc private func fetchAndAnimateRandomPalette() {
         isAnimating = false
         
-        if palettes.count > 0 {
+        if !palettes.isEmpty {
             let index = Int(arc4random_uniform(UInt32(palettes.count)))
             let randomPalette = palettes[index]
             
             animateColors(withPalette: randomPalette)
-            return
         } else {
             Colors.fetchPalettes { (palettes) in
                 if let palettes = palettes {
@@ -86,10 +85,5 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 }
