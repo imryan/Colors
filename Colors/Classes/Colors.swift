@@ -12,7 +12,7 @@ public class Colors {
     // MARK: - Attributes
     
     /// API base URL
-    private static let API_URL = "https://klart.io/api/colors"
+    private static let API_URL = URL(string: "https://klart.io/api/colors")!
     
     // MARK: - Functions
     
@@ -20,7 +20,7 @@ public class Colors {
     ///
     /// - Parameter completion: Optional array of `Palette` objects containing an identifier and hex color code array.
     public static func fetchPalettes(completion: @escaping (_ palettes: [Palette]?) -> ()) {
-        URLSession.shared.dataTask(with: URL(string: API_URL)!) { (data, response, error) in
+        URLSession.shared.dataTask(with: API_URL) { (data, response, error) in
             guard let data = data, error == nil else {
                 completion(nil)
                 return
