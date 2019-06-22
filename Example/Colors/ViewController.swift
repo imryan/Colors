@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     
     // MARK: - IBOutlet
     
-    @IBOutlet var colorViews: [UIView]!
+    @IBOutlet weak var colorsStackView: UIStackView!
     
     // MARK: - Attributes
     
@@ -75,7 +75,7 @@ class ViewController: UIViewController {
         DispatchQueue.main.async {
             UIView.animate(withDuration: 0.3, animations: {
                 for (index, color) in palette.colorValues.enumerated() {
-                    self.colorViews[index].backgroundColor = color
+                    self.colorsStackView.subviews[index].backgroundColor = color
                 }
             })
         }
