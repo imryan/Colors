@@ -7,7 +7,7 @@
 
 import Foundation
 
-public class Palette: Codable {
+public class Palette: Codable, CustomStringConvertible {
     
     // MARK: - Attributes
     

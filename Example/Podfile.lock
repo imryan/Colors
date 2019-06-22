@@ -1,22 +1,16 @@
 PODS:
-  - Colors (0.1.0)
-  - Nimble (7.0.3)
-  - Quick (1.2.0)
+  - Colors (1.0.0)
 
 DEPENDENCIES:
   - Colors (from `../`)
-  - Nimble (~> 7.0.2)
-  - Quick (~> 1.2.0)
 
 EXTERNAL SOURCES:
   Colors:
-    :path: ../
+    :path: "../"
 
 SPEC CHECKSUMS:
-  Colors: 2f36a69f97ac494a6434770853be7fec2f0def32
-  Nimble: 7f5a9c447a33002645a071bddafbfb24ea70e0ac
-  Quick: 58d203b1c5e27fff7229c4c1ae445ad7069a7a08
+  Colors: a1909319bf993305a60c5f68d04019f5935ba255
 
-PODFILE CHECKSUM: 761bcc03b5fda4f42dbb77062317c1dd8f3e71a8
+PODFILE CHECKSUM: 73f1fbd470cd07994f9aab5a906db690e2bef042
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.7.1

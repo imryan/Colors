@@ -53,6 +53,7 @@ class ViewController: UIViewController {
             Colors.fetchPalettes { (palettes) in
                 if let palettes = palettes {
                     self.palettes = palettes
+                    self.fetchAndAnimateRandomPalette()
                 }
             }
         }

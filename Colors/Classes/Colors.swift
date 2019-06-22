@@ -12,7 +12,7 @@ public class Colors {
     // MARK: - Attributes
     
     /// API base URL
-    static let API_URL = "https://klart.io/api/colors"
+    private static let API_URL = "https://klart.io/api/colors"
     
     // MARK: - Functions
     
@@ -21,22 +21,15 @@ public class Colors {
     /// - Parameter completion: Optional array of `Palette` objects containing an identifier and hex color code array.
     public static func fetchPalettes(completion: @escaping (_ palettes: [Palette]?) -> ()) {
         URLSession.shared.dataTask(with: URL(string: API_URL)!) { (data, response, error) in
-            guard let data = data, error == nil else { return }
-            
-            if let palettes = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) as! [[String : Any]] {
-                var mutablePalettes: [Palette] = []
-                for palette in palettes {
-                    if let palette = try? JSONDecoder().decode(Palette.self, from: JSONSerialization.data(withJSONObject: palette, options: [])) {
-                        mutablePalettes.append(palette)
-                    }
-                }
-                
-                completion(mutablePalettes)
+            guard let data = data, error == nil else {
+                completion(nil)
                 return
             }
-            completion(nil)
             
-            }.resume()
+            let palettes = try? JSONDecoder().decode([Palette].self, from: data)
+            completion(palettes)
+            
+        }.resume()
     }
     
     /// Fetch single `Palette` object by its identifier
@@ -46,11 +39,12 @@ public class Colors {
     ///   - completion: Optional `Palette` object.
     public static func fetchPalette(withId id: String, completion: @escaping (_ palette: Palette?) -> ()) {
         fetchPalettes { (palettes) in
-            if let palettes = palettes {
-                if let match = palettes.first(where: { $0.id == id }) {
-                    completion(match)
-                }
+            guard let palettes = palettes else {
+                completion(nil)
+                return
             }
+            
+            completion(palettes.first(where: { $0.id == id }))
         }
     }
 }

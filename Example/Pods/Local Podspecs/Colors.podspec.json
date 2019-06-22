@@ -1,22 +1,25 @@
 {
   "name": "Colors",
-  "version": "0.1.0",
-  "summary": "A short description of Colors.",
-  "description": "TODO: Add long description of the pod here.",
+  "version": "1.0.0",
+  "summary": "Simple color palletes courtesy of klart.io",
+  "description": "Simple color palletes courtesy of klart.io",
   "homepage": "https://github.com/imryan/Colors",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
   },
   "authors": {
-    "imryan": "notryancohen@gmail.com"
+    "Ryan Cohen": "notryancohen@gmail.com"
   },
   "source": {
     "git": "https://github.com/imryan/Colors.git",
-    "tag": "0.1.0"
+    "tag": "1.0.0"
   },
+  "social_media_url": "https://twitter.com/ryancohen",
+  "swift_versions": "4.0",
   "platforms": {
     "ios": "8.0"
   },
-  "source_files": "Colors/Classes/**/*"
+  "source_files": "Colors/Classes/**/*",
+  "swift_version": "4.0"
 }
